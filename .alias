@@ -1,0 +1,38 @@
+# system commands
+alias ls='ls --color'
+alias l='ls -F'
+alias ll='ls -l'
+alias la='ls -lA'
+alias ack='ack-grep'
+alias grep='grep --color'
+
+# open with gnome's default program
+alias o='gnome-open'
+
+# open in gvim
+alias g='gvim'
+
+# git & stuff
+alias gid='git diff'
+alias gc='git ci'
+
+#
+# development stuff
+#
+
+alias githere='git daemon --reuseaddr --base-path=. --export-all --verbose'
+
+alias openports='lsof -i -n -P'
+
+alias p='ipython'
+
+# start debugging mail server on port 8025
+alias debug_mail='python -m smtpd -nc DebuggingServer'
+
+# pretty print for json
+alias pjson='python -mjson.tool'
+
+# djang test
+alias dt='clear && ./manage.py test'
+
+# EOF
