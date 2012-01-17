@@ -1,0 +1,22 @@
+Compression yes
+CompressionLevel 9
+ServerAliveInterval 300
+
+Host *
+  ControlPath ~/.ssh/master-%l-%r@%h:%p
+  ControlMaster auto
+
+Host hauru
+  HostName hauru.eu
+  ForwardAgent yes
+
+Host ifrit
+  HostName ifrit.ii.uj.edu.pl
+
+Host ward
+  Hostname ward.hauru.eu
+
+Host meetupon
+  User tpaczkowski
+  Hostname 78.47.51.100 
+
