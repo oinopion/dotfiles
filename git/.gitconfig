@@ -16,7 +16,7 @@
 [color]
 	ui = true
 [core]
-	excludesfile = /home/oinopion/.gitignore
+	excludesfile = ~/.gitignore
 [branch]
 	autosetupmerge = true
 [push]

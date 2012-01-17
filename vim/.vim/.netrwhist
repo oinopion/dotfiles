@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/oinopion/.zsh/cache'
-let g:netrw_dirhist_2='/home/oinopion/Work/toolbox/.git'
-let g:netrw_dirhist_3='/home/oinopion/.zsh'
-let g:netrw_dirhist_4='/home/oinopion/.gem'
-let g:netrw_dirhist_5='/etc/jetty'
