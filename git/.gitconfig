@@ -1,0 +1,23 @@
+[user]
+	name = Tomek Paczkowski
+	email = tomek@hauru.eu
+[alias]
+	st = status
+	di = diff
+	co = checkout
+	ci = commit --verbose
+        br = branch
+	up = pull --rebase
+	update = pull --rebase
+	last = cat-file commit HEAD
+	uncommit = reset --soft HEAD^
+	unstash = stash pop
+	diffstage = diff --cached
+[color]
+	ui = true
+[core]
+	excludesfile = /home/oinopion/.gitignore
+[branch]
+	autosetupmerge = true
+[push]
+	default = current
