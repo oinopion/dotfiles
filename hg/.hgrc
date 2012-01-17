@@ -1,0 +1,8 @@
+[ui]
+username = Tomek Paczkowski <tomek@hauru.eu>
+ignore = ~/.hgignore
+[extensions]
+color =
+fetch = 
+purge =
+rebase = 

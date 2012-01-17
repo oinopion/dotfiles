@@ -1,4 +1,4 @@
-install: install-vim install-zsh install-ssh install-git
+install: install-vim install-zsh install-ssh install-git install-hg
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -13,6 +13,11 @@ install-git:
 	rm -rf ~/.gitconfig ~/.gitignore
 	ln -s `pwd`/git/.gitconfig ~/.gitconfig
 	ln -s `pwd`/git/.gitignore ~/.gitignore
+
+install-hg:
+	rm -rf ~/.hgrc ~/.hgignore
+	ln -s `pwd`/hg/.hgrc ~/.hgrc
+	ln -s `pwd`/hg/.hgignore ~/.hgignore
 
 install-ssh:
 	rm -rf ~/.ssh/config
