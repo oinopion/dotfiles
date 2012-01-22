@@ -1,8 +1,15 @@
 [ui]
 username = Tomek Paczkowski <tomek@hauru.eu>
+verbose = True
 ignore = ~/.hgignore
+merge = internal:merge
 [extensions]
 color =
 fetch = 
 purge =
 rebase = 
+shelve = 
+[alias]
+latest = log --limit 5
+[diff]
+git = True

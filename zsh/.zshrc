@@ -7,7 +7,7 @@ ZSH_THEME="terminalparty"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git mercurial python brew pip osx)
+plugins=(git mercurial python brew pip osx django)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,6 +40,9 @@ alias githere='git daemon --reuseaddr --base-path=. --export-all --verbose'
 alias openports='lsof -i -n -P'
 alias debug_mail='python -m smtpd -nc DebuggingServer'
 alias pjson='python -mjson.tool'
+
+# django stuff
 alias dt='clear && ./manage.py test'
+alias dl='clear && ./manage.py harvest --settings=lettuce_settings'
 
 alias mu="workon meetupon"
