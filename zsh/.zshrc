@@ -7,7 +7,7 @@ ZSH_THEME="terminalparty"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git mercurial python brew pip osx django)
+plugins=(git mercurial brew osx)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,14 +17,17 @@ SAVEHIST=20000
 
 # Fix path for brew
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/share/python3:$PATH"
 export PATH="/usr/local/share/python:$PATH"
 
 # PIP enchancement
 export PIP_DOWNLOAD_CACHE="~/.pip-cache"
 
 # Some key bindings
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
+bindkey "^[^[[D" backward-word
+bindkey "^[^[[C" forward-word
+#bindkey "^[[1;5C" forward-word
+#bindkey "^[[1;5D" backward-word
 bindkey "^[[3;5~" kill-word
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
