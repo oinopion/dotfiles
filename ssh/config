@@ -20,3 +20,6 @@ Host meetupon
   User tpaczkowski
   Hostname 78.47.51.100 
 
+Host ubu
+  Hostname localhost
+  Port 2222

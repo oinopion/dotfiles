@@ -1,6 +1,5 @@
 [ui]
 username = Tomek Paczkowski <tomek@hauru.eu>
-verbose = True
 ignore = ~/.hgignore
 merge = internal:merge
 [extensions]

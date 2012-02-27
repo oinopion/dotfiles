@@ -37,7 +37,8 @@ set shiftwidth=4
 set ruler
 
 if has("gui_running")
-    set guifont=Monospace\ 12
+    " set guifont=Monospace\ 16
+    set guifont=Menlo Regular:h16
     set guioptions-=m
     set guioptions-=T
     set guioptions-=r
