@@ -44,6 +44,10 @@ alias openports='lsof -i -n -P'
 alias debug_mail='python -m smtpd -nc DebuggingServer'
 alias pjson='python -mjson.tool'
 alias b='bpython'
+alias runmongo='mongod run --config /usr/local/Cellar/mongodb/2.0.4-x86_64/mongod.conf'
+
+alias gits='git sync'
+alias gc='git commit'
 
 # django stuff
 alias dm='clear && ./manage.py'
@@ -55,4 +59,9 @@ alias pyclean="find . -name '*.pyc' -delete"
 
 alias mu="workon meetupon"
 
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+
+
+PATH=/usr/local/sbin/:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
