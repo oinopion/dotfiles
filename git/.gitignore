@@ -1,5 +1,10 @@
 *.pyc
 *.iml
+*.iws
+*.ipr
 .idea
 *.swp
+.env
 .DS_Store
+.rakeTasks
+.generators

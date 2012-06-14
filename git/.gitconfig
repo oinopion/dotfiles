@@ -8,6 +8,7 @@
 	ci = commit --verbose
         br = branch
 	up = pull --rebase
+        makeeverythingok = reset --hard
 	update = pull --rebase
 	last = cat-file commit HEAD
 	uncommit = reset --soft HEAD^
@@ -21,6 +22,7 @@
 	sync = !legit sync \"$@\"
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
+
 [color]
 	ui = true
 [core]
