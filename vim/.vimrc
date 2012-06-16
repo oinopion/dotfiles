@@ -1,8 +1,20 @@
-" --> [generals]
-"
 " this must be first, because it changes other options as a side effect
 set nocompatible
 
+" --> [vundle]
+
+" required by Vundle
+filetype off
+set runtimepath+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+
+
+
+" --> [generals]
 " enable filetype plugins
 filetype plugin on
 filetype indent on
