@@ -1,7 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/oinopion/.gem'
 let g:netrw_dirhist_2='/Users/oinopion/Work/future_kiss'
 let g:netrw_dirhist_3='/Users/oinopion/Work/stack/lib/stack'
 let g:netrw_dirhist_4='/Users/oinopion/Work/stack'
 let g:netrw_dirhist_5='/Users/oinopion/Work/sales/app'
+let g:netrw_dirhist_6='/Users/oinopion/Work/tasks-frontend/.bundle'
+let g:netrw_dirhist_7='/Users/oinopion/Work/agility-shared'
+let g:netrw_dirhist_8='/Users/oinopion/.dotfiles/.git'

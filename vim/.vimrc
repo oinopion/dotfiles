@@ -3,9 +3,6 @@
 " this must be first, because it changes other options as a side effect
 set nocompatible
 
-" keep x lines of command line history
-set history=350
-
 " enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -37,22 +34,20 @@ set undofile
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
+" keep x lines of command line history
+set history=350
+
+
 " --> [visuals]
 "
 " show the cursor position all the time
 set ruler
 
 if has("gui_running")
-    " set guifont=Monospace\ 16
-    set guifont=Menlo Regular:h16
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=l
-    set guioptions-=L
-    set guioptions-=R
+    set guioptions=
+    set guifont=Menlo:h18
     set lines=40
-    set columns=120
+    set columns=100
 endif
 
 " highlight syntax
@@ -64,19 +59,15 @@ set number
 " laeve some space when moving vertical
 set scrolloff=5
 
+" no wrapping of long lines
 set nowrap
 
 " always show statusline
 set laststatus=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-" set statusline=\ %F%m%r%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
-
-" never show tabline
-"set showtabline=0
 
 " set some nice colors
-set t_Co=256
-colorscheme mustang
+colorscheme inkpot
 
 " --> [others]
 "
@@ -94,7 +85,6 @@ map Q gq
 " no sound on errors
 set noerrorbells
 set novisualbell
-"set t_vb=
 
 " set some magic
 set magic
@@ -103,7 +93,7 @@ set magic
 set backspace=indent,eol,start
 
 " set nice 'list' symbols (to actualy see them use :list)
-set listchars=tab:>.,trail:.,eol:<
+set listchars=tab:→·,trail:·,eol:↩
 
 " set nice completion menu
 set wildmenu
@@ -115,18 +105,6 @@ set completeopt=longest,menu
 " prompt for spelllanguage and turn spellchecker on
 nmap <F7> :setlocal spell spelllang=
 
-" Copy&Paste 
-map <C-C> "+y
-map <C-V> "+p
-imap <C-V> <C-R>+
-
-" turn on NERDTree
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <F11> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\~$', '.pyc']
-
-" ctags shortcut
-map <leader>t :!ctags -R<CR>
 
 " use F1 for something useful
 map <F1> <esc>
@@ -138,34 +116,11 @@ map <F6> :noh<CR>
 " wrap/nowrap
 map <F5> :set wrap!<CR>
 
-" tabs
-map <C-Insert> <ESC> :tabnew<CR>
-imap <C-Insert> <ESC> :tabnew<CR>
-
-" Taglist
-"map <leader>b  :TlistToggle<CR>
-"map <F12>  :TlistToggle<CR>
-"let Tlist_Show_One_File = 1
-"let Tlist_Use_Right_Window = 1
-"let Tlist_GainFocus_On_ToggleOpen = 1
-"let Tlist_Exit_OnlyWindow = 1
-"let Tlist_Close_On_Select = 1
-"let Tlist_Sort_Type = "name"
-"let Tlist_Inc_Winwidth = 0
-
-map <leader>a :A<CR>
 
 " --> [autocommands]
 "
 au FileType text setlocal textwidth=72
-
-au FileType python compiler pyunit
-au FileType python set makeprg=nosetests
-au FileType python set omnifunc=pythoncomplete#Complete
-" au FileType python setlocal omnifunc=pysmell#Complete
-au FileType python let python_highlight_all=1
-au FileType python let python_slow_sync=1
-
+au FileType ruby setlocal sts=2 sw=2 ts=2
 
 " when editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
@@ -174,6 +129,3 @@ autocmd BufReadPost *
 \ endif
 
 
-let g:github_user = 'oinopion'
-let g:github_token = '0a80ecd87e5e673b7f0142bff6ff410b'
-let g:gist_browser_command = 'google-chrome %URL%'
