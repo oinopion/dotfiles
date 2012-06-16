@@ -93,6 +93,7 @@ set magic
 set backspace=indent,eol,start
 
 " set nice 'list' symbols (to actualy see them use :list)
+set list
 set listchars=tab:→·,trail:·,eol:↩
 
 " set nice completion menu
