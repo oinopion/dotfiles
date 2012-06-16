@@ -13,7 +13,6 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 
 
-
 " --> [generals]
 " enable filetype plugins
 filetype plugin on
@@ -49,6 +48,9 @@ set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 " keep x lines of command line history
 set history=350
 
+" no backups
+set nobackup
+set noswapfile
 
 " --> [visuals]
 "
@@ -79,7 +81,8 @@ set laststatus=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " set some nice colors
-colorscheme inkpot
+set t_Co=256
+colorscheme mustang
 
 " --> [others]
 "
