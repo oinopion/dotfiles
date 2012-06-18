@@ -57,7 +57,12 @@ alias dl='dm harvest --settings=lettuce_settings'
 alias pyt='clear && py.test'
 alias pyclean="find . -name '*.pyc' -delete"
 
-alias mu="workon meetupon"
+alias t='tree -L 2'
+alias b='bundle --binstubs'
+alias be='bundle exec'
+alias bc='bundle console'
+
+alias sv='sudo vim'
 
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
