@@ -9,7 +9,6 @@ set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 
 
@@ -17,6 +16,13 @@ Bundle 'kien/ctrlp.vim'
 " enable filetype plugins
 filetype plugin on
 filetype indent on
+
+
+" map commonly mistype commands
+com! Q q
+com! Wq wq
+com! WQ wq
+
 
 " set to auto read when a file is changed from the outside
 set autoread
@@ -28,8 +34,8 @@ set autowrite
 set mouse=a
 
 " set mapleader
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
 " fast saving
 nmap <leader>w :w!<cr>
@@ -111,6 +117,7 @@ set backspace=indent,eol,start
 set list
 set listchars=tab:→·,trail:·,eol:↩
 
+
 " set nice completion menu
 set wildmenu
 set wildmode=longest:full,full
@@ -121,25 +128,29 @@ set completeopt=longest,menu
 " prompt for spelllanguage and turn spellchecker on
 nmap <F7> :setlocal spell spelllang=
 
-
-" use F1 for something useful
-map <F1> <esc>
-imap <F1> <esc>
-
 " turn off highlight
-map <F6> :noh<CR>
+map <leader>n :noh<CR>
+
+" go to last used buffer
+nmap <leader><leader> <c-^>
 
 " wrap/nowrap
 map <F5> :set wrap!<CR>
 
+" list/nolist
+map <F6> :set list!<CR>
 
-" --> [autocommands]
+" copy & paste 
+map <leader>y "+y
+map <leader>p "+p
+
+" --> [paperwork]
 "
 au FileType text setlocal textwidth=72
 au FileType ruby setlocal sts=2 sw=2 ts=2
 
 " when editing a file, always jump to the last known cursor position.
-autocmd BufReadPost *
+au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
 \ 	exe "normal g`\"" |
 \ endif
