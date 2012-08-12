@@ -10,6 +10,10 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 Bundle 'kien/ctrlp.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-powerline'
+
 
 
 " --> [generals]
@@ -84,7 +88,7 @@ set nowrap
 
 " always show statusline
 set laststatus=2
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " set some nice colors
 set t_Co=256
@@ -114,7 +118,6 @@ set magic
 set backspace=indent,eol,start
 
 " set nice 'list' symbols (to actualy see them use :list)
-set list
 set listchars=tab:→·,trail:·,eol:↩
 
 
@@ -148,6 +151,7 @@ map <leader>p "+p
 "
 au FileType text setlocal textwidth=72
 au FileType ruby setlocal sts=2 sw=2 ts=2
+au FileType coffee setlocal sts=2 sw=2 ts=2
 
 " when editing a file, always jump to the last known cursor position.
 au BufReadPost *
