@@ -1,4 +1,4 @@
-install: install-vim install-zsh install-ssh install-git install-hg
+install: install-vim install-zsh install-ssh install-git install-hg download-ohmyzsh
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -23,3 +23,6 @@ install-ssh:
 	rm -rf ~/.ssh/config
 	ln -s `pwd`/ssh/config ~/.ssh/config
 
+download-ohmyzsh:
+	rm -rf ~/.oh-my-zsh
+	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh

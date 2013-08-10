@@ -12,14 +12,12 @@ plugins=(git mercurial brew osx django)
 source $ZSH/oh-my-zsh.sh
 
 # Shell history
-HISTSIZE=1000
+HISTSIZE=10000
 SAVEHIST=20000
 
 # Fix path for brew
 export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin/:$PATH"
-export PATH="/usr/local/share/python3:$PATH"
-export PATH="/usr/local/share/python:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # PIP enchancement
@@ -48,11 +46,9 @@ alias githere='git daemon --reuseaddr --base-path=. --export-all --verbose'
 alias openports='lsof -i -n -P'
 alias debug_mail='python -m smtpd -nc DebuggingServer'
 alias pjson='python -mjson.tool'
-alias runmongo='mongod run --config /usr/local/Cellar/mongodb/2.0.4-x86_64/mongod.conf'
 
 alias gs='git status'
 alias gc='git commit'
-alias fixmac="find ~/Library/Preferences/ByHost -name '*windowserver*' -delete"
 
 # django stuff
 alias dm='clear && ./manage.py'
@@ -62,10 +58,6 @@ alias pyt='clear && py.test'
 alias pyclean="find . -name '*.pyc' -delete"
 
 alias t='tree -L 2'
-alias b='bundle --binstubs'
-alias be='bundle exec'
-alias bc='bundle console'
-alias bs='bundle exec rspec'
 
 alias sv='sudo vim'
 
