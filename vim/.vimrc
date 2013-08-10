@@ -1,20 +1,6 @@
 " this must be first, because it changes other options as a side effect
 set nocompatible
 
-" --> [vundle]
-
-" required by Vundle
-filetype off
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-Bundle 'kien/ctrlp.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
-
-
 
 " --> [generals]
 " enable filetype plugins
