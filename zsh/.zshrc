@@ -39,7 +39,7 @@ bindkey '^[[B' down-line-or-search
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Virtualenvwrapper
-[[ -s "/usr/local/share/python/virtualenvwrapper.sh" ]] && source "/usr/local/share/python/virtualenvwrapper.sh" 
+[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh" 
 
 # Custom aliases
 alias githere='git daemon --reuseaddr --base-path=. --export-all --verbose'
@@ -60,6 +60,7 @@ alias pyclean="find . -name '*.pyc' -delete"
 alias t='tree -L 2'
 
 alias sv='sudo vim'
+alias wo='workon'
 
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
