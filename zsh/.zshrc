@@ -18,7 +18,8 @@ SAVEHIST=20000
 # Fix path for brew
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
+
 
 # PIP enchancement
 export PIP_DOWNLOAD_CACHE="~/.pip-cache"
@@ -34,9 +35,6 @@ bindkey "^[^[[C" forward-word
 bindkey "^[[3;5~" kill-word
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
-
-# RVM 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Virtualenvwrapper
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh" 
