@@ -4,8 +4,11 @@ set nocompatible
 
 " --> [generals]
 " enable filetype plugins
-filetype plugin on
-filetype indent on
+filetype off
+filetype plugin indent off
+set runtimepath+=~/.vim-golang
+filetype plugin indent on
+syntax on
 
 
 " map commonly mistype commands
@@ -34,6 +37,7 @@ nmap <leader>w :w!<cr>
 set expandtab
 set softtabstop=4
 set shiftwidth=4
+set colorcolumn=80
 
 " persistent undo <3
 set undodir=~/.vim/undodir
@@ -138,6 +142,7 @@ map <leader>p "+p
 au FileType text setlocal textwidth=72
 au FileType ruby setlocal sts=2 sw=2 ts=2
 au FileType coffee setlocal sts=2 sw=2 ts=2
+au FileType go setlocal noexpandtab ts=4
 
 " when editing a file, always jump to the last known cursor position.
 au BufReadPost *

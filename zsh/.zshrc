@@ -20,9 +20,12 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 
-
 # PIP enchancement
 export PIP_DOWNLOAD_CACHE="~/.pip-cache"
+
+# Go workspace
+export GOPATH="$HOME/Devel/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # Editor
 export EDITOR='vim'
