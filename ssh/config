@@ -10,6 +10,3 @@ Host snow
   HostName snow.hauru.eu
   ForwardAgent yes
 
-Host ifrit
-  HostName ifrit.ii.uj.edu.pl
-

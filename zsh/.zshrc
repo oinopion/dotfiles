@@ -15,17 +15,13 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=10000
 SAVEHIST=20000
 
+# Proper locale
+export LC_ALL='en_GB.UTF-8'
+export LANG='en_GB.UTF-8'
+
 # Fix path for brew
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
-
-# PIP enchancement
-export PIP_DOWNLOAD_CACHE="~/.pip-cache"
-
-# Go workspace
-export GOPATH="$HOME/Devel/go"
-export PATH="$PATH:$GOPATH/bin"
 
 # Editor
 export EDITOR='vim'
@@ -40,6 +36,7 @@ bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
 # Virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh" 
 
 # Custom aliases
@@ -51,20 +48,9 @@ alias pjson='python -mjson.tool'
 alias gs='git status'
 alias gc='git commit'
 
-# django stuff
-alias dm='clear && ./manage.py'
-alias dt='dm test'
-
-alias pyt='clear && py.test'
-alias pyclean="find . -name '*.pyc' -delete"
-
 alias t='tree -L 2'
 
 alias sv='sudo vim'
 alias wo='workon'
-
-export LC_ALL='en_US.UTF-8'
-export LANG='en_US.UTF-8'
-
 
 
