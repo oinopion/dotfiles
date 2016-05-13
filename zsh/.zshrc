@@ -26,11 +26,13 @@ export PATH="/usr/local/sbin:$PATH"
 # Editor
 export EDITOR='vim'
 
+# Python startup
+export PYTHONSTARTUP="$HOME/.pythonrc.py"
+export PYTHONDONTWRITEBYTECODE="1"
+
 # Some key bindings
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
-#bindkey "^[[1;5C" forward-word
-#bindkey "^[[1;5D" backward-word
 bindkey "^[[3;5~" kill-word
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
@@ -53,4 +55,6 @@ alias t='tree -L 2'
 alias sv='sudo vim'
 alias wo='workon'
 
+export LC_ALL='en_GB.UTF-8'
+export LANG='en_GB.UTF-8'
 
