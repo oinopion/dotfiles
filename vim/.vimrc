@@ -4,18 +4,13 @@ set nocompatible
 
 " --> [generals]
 " enable filetype plugins
-filetype off
-filetype plugin indent off
-set runtimepath+=~/.vim-golang
 filetype plugin indent on
 syntax on
-
 
 " map commonly mistype commands
 com! Q q
 com! Wq wq
 com! WQ wq
-
 
 " set to auto read when a file is changed from the outside
 set autoread
@@ -57,16 +52,6 @@ set noswapfile
 " show the cursor position all the time
 set ruler
 
-if has("gui_running")
-    set guioptions=
-    set guifont=Menlo:h18
-    set lines=40
-    set columns=100
-endif
-
-" highlight syntax
-syntax on
-
 " show line nuber
 set number
 
@@ -78,11 +63,7 @@ set nowrap
 
 " always show statusline
 set laststatus=2
-"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-
-" set some nice colors
-set t_Co=256
-colorscheme mustang
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " --> [others]
 "

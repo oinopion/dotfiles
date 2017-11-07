@@ -7,7 +7,7 @@ ZSH_THEME="terminalparty"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git mercurial brew osx django)
+plugins=(git brew osx mix)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,10 +37,6 @@ bindkey "^[[3;5~" kill-word
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
-# Virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
-[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh" 
-
 # Custom aliases
 alias githere='git daemon --reuseaddr --base-path=. --export-all --verbose'
 alias openports='lsof -i -n -P'
@@ -58,3 +54,4 @@ alias wo='workon'
 export LC_ALL='en_GB.UTF-8'
 export LANG='en_GB.UTF-8'
 
+export ANDROID_HOME=/Users/oinopion/Library/Android/sdk

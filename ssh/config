@@ -2,11 +2,7 @@ Compression yes
 CompressionLevel 9
 ServerAliveInterval 300
 
-Host hauru
-  HostName hauru.eu
-  ForwardAgent yes
-
-Host snow
-  HostName snow.hauru.eu
-  ForwardAgent yes
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
 

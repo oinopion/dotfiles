@@ -1,30 +1,34 @@
 [user]
-	name = Tomek Paczkowski
-	email = tomek@hauru.eu
+    name = Tomek Paczkowski
+    email = tomek@hauru.eu
 [alias]
-	st = status
-	di = diff
-	dis = diff --cached
-	co = checkout
-	ci = commit --verbose
-        br = branch
-	up = pull --rebase
-        puff = pull --ff
-        makeeverythingok = reset --hard
-	update = pull --rebase
-	last = cat-file commit HEAD
-	uncommit = reset --soft HEAD^
-	unstash = stash pop
-	diffstage = diff --cached
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	aa = add --all
+    st = status
+    di = diff
+    dis = diff --cached
+    co = checkout
+    ci = commit --verbose
+    br = branch
+    up = pull --rebase
+    amend = ci --amend
+    am = amend
+    makeeverythingok = reset --hard
+    update = pull --rebase
+    last = cat-file commit HEAD
+    uncommit = reset --soft HEAD^
+    unstash = stash pop
+    diffstage = diff --cached
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    aa = add --all
+    recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - (%(color:green)%(committerdate:relative)%(color:reset))'
 
 [color]
-	ui = true
+    ui = true
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
+    excludesfile = ~/.gitignore
+    editor = vim
 [branch]
-	autosetupmerge = true
+    autosetupmerge = true
 [push]
-	default = current
+    default = current
+[pull]
+    ff = only
