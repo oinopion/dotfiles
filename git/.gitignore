@@ -4,6 +4,7 @@
 *.ipr
 .idea
 .vscode
+.elixir_ls
 *.swp
 .env
 .DS_Store
