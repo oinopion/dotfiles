@@ -26,9 +26,5 @@ export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export PYTHONDONTWRITEBYTECODE="1"
 
-
 # Custom aliases
-
-alias gs='git status'
-alias gc='git commit'
-alias t='tree -L 2'
+source $HOME/.alias

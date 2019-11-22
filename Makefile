@@ -6,8 +6,9 @@ install-vim:
 	ln -s `pwd`/vim/.vimrc ~/.vimrc
 
 install-zsh:
-	rm -rf ~/.zshrc
+	rm -rf ~/.zshrc ~/.alias
 	ln -s `pwd`/zsh/.zshrc ~/.zshrc
+	ln -s `pwd`/zsh/.alias ~/.alias
 
 install-git:
 	rm -rf ~/.gitconfig ~/.gitignore
