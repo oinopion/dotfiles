@@ -8,5 +8,3 @@
 *.swp
 .env
 .DS_Store
-.rakeTasks
-.generators

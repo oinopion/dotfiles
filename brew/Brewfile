@@ -1,0 +1,28 @@
+tap "homebrew/services"
+tap "universal-ctags/universal-ctags"
+tap "heroku/brew"
+tap "homebrew/cask"
+
+brew "universal-ctags", args: ["HEAD"]
+brew "git"
+brew "openssl"
+brew "vim"
+brew "tmux"
+brew "watchman"
+brew "zsh"
+brew "zsh-completions"
+brew "asdf"
+brew "jq"
+
+# Heroku
+brew "heroku/brew/heroku"
+brew "hub"
+
+# Databases
+brew "postgres", restart_service: :changed
+brew "redis", restart_service: :changed
+
+cask "iterm2"
+cask "visual-studio-code"
+cask "alfred"
+cask "itsycal"

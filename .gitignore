@@ -1,2 +1,3 @@
-vim/.vim/bundle
 vim/.vim/undodir
+vim/.vim/.netrwhist
+brew/Brewfile.lock.json
