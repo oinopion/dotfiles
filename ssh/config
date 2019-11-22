@@ -1,5 +1,4 @@
 Compression yes
-CompressionLevel 9
 ServerAliveInterval 300
 
 Host *
