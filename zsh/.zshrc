@@ -26,5 +26,12 @@ export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export PYTHONDONTWRITEBYTECODE="1"
 
+# Enable pipx commands
+path+="$HOME/.local/bin"
+
+# Enable asdf version manager
+source /usr/local/opt/asdf/asdf.sh
+source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
 # Custom aliases
 source $HOME/.alias

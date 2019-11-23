@@ -4,5 +4,7 @@ alias t='tree -L 2'
 
 alias aliases-edit='vim -f ~/.alias && source ~/.alias'
 
+
+alias dotfiles-edit='(cd ~/.dotfiles && $EDITOR .)'
 alias dotfiles-commit='(cd ~/.dotfiles && git ci -a && git push)'
 alias dotfiles-update='(cd ~/.dotfiles && git pull && source ~/.zshrc)'

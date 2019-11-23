@@ -13,6 +13,7 @@ brew "zsh"
 brew "zsh-completions"
 brew "asdf"
 brew "jq"
+brew "pipx"
 
 # Heroku
 brew "heroku/brew/heroku"
