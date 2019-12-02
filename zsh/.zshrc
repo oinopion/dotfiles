@@ -5,7 +5,14 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""
 
 # Select oh-my-zsh plugins
-plugins=(git osx mix)
+plugins=(
+    git 
+    osx 
+    mix 
+    heroku 
+    pipenv 
+    postgres
+)
 
 # Enable oh-my-zsh
 source $ZSH/oh-my-zsh.sh
