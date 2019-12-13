@@ -14,6 +14,9 @@ brew "zsh-completions"
 brew "asdf"
 brew "jq"
 brew "pipx"
+brew "pipenv"
+brew "pwgen"
+brew "pgcli"
 
 # Heroku
 brew "heroku/brew/heroku"
