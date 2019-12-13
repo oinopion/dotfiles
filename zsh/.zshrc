@@ -29,6 +29,10 @@ SAVEHIST=20000
 # Vim as console editor
 export EDITOR='vim'
 
+# Enable asdf version manager
+source /usr/local/opt/asdf/asdf.sh
+source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
 # Python startup
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export PYTHONDONTWRITEBYTECODE="1"
@@ -36,9 +40,9 @@ export PYTHONDONTWRITEBYTECODE="1"
 # Enable pipx commands
 path+="$HOME/.local/bin"
 
-# Enable asdf version manager
-source /usr/local/opt/asdf/asdf.sh
-source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+# Set home for non-module golang packages
+export GOPATH="$HOME/.go"
+path+="$GOPATH/bin"
 
 # Custom aliases
 source $HOME/.alias
