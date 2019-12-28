@@ -12,6 +12,7 @@ plugins=(
     heroku 
     pipenv 
     postgres
+    docker
 )
 
 # Enable oh-my-zsh
@@ -32,6 +33,7 @@ export EDITOR='vim'
 # Enable asdf version manager
 source /usr/local/opt/asdf/asdf.sh
 source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+export NODEJS_CHECK_SIGNATURES="no"
 
 # Python startup
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
