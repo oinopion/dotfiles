@@ -10,9 +10,9 @@ plugins=(
     osx 
     mix 
     heroku 
-    pipenv 
     postgres
     docker
+    aws
 )
 
 # Enable oh-my-zsh
