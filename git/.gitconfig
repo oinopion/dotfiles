@@ -8,6 +8,7 @@
     dis = diff --cached
     diffstage = diff --cached
     co = checkout
+    aa = add --all
     ci = commit --verbose
     br = branch
     amend = ci --amend
@@ -16,10 +17,18 @@
     last = cat-file commit HEAD
     uncommit = reset --soft HEAD^
     unstash = stash pop
+    
+    # A nice and compact log
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    aa = add --all
+    
+    # Lists branches in last commit date
     recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - (%(color:green)%(committerdate:relative)%(color:reset))'
+    
+    # Resets current branch to catch up with remote, local commits will be 
+    # discarded. Useful when reviewing code of someone who rebases often.
     catchup = "!f(){ echo -n \"reset \\033[0;33m$(git symbolic-ref -q --short HEAD)\\033[0m to \\033[0;33m$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))\\033[0m? (Y/n) \"; read -r ans; if [ \"$ans\" = \"y\" -o \"$ans\" = \"Y\" -o -z \"$ans\" ]; then git reset --hard $(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)); else echo \"catchup aborted\"; fi }; f"
+    
+    # Prunes origin branches and removes local merged branches
     cleanupbranches = "!f(){ git remote prune origin; git branch --merged | egrep -v '(^\\*|master|dev)' | xargs git branch -d; }; f"
 
 [color]
