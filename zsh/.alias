@@ -2,6 +2,8 @@ alias gs='git status'
 alias gc='git commit'
 alias t='tree -L 2'
 
+alias dc='docker-compose'
+
 alias aliases-edit='vim -f ~/.alias && source ~/.alias'
 
 
