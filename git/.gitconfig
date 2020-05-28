@@ -12,7 +12,7 @@
     ci = commit --verbose
     br = branch
     amend = ci --amend
-    am = ci --amend
+    amendall = ci --amend --all
     makeeverythingok = reset --hard
     last = cat-file commit HEAD
     uncommit = reset --soft HEAD^
