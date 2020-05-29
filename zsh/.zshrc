@@ -8,11 +8,12 @@ ZSH_THEME=""
 plugins=(
     git 
     osx 
-    mix 
+    mix
     heroku 
     postgres
     docker
     aws
+    z
 )
 
 # Enable oh-my-zsh
