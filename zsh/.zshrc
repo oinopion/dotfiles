@@ -8,7 +8,7 @@ ZSH_THEME=""
 plugins=(
     git 
     osx 
-    mix
+    mix-fast
     heroku 
     postgres
     docker
