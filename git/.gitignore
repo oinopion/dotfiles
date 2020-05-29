@@ -5,6 +5,7 @@
 .idea
 .vscode
 .elixir_ls
+.mix_tasks
 *.swp
 .env
 .DS_Store
