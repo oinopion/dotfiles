@@ -14,6 +14,9 @@ plugins=(
     docker
     aws
     z
+    docker-compose
+    httpie
+    kubectl
 )
 
 # Enable oh-my-zsh
