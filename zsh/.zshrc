@@ -34,6 +34,10 @@ SAVEHIST=20000
 # Vim as console editor
 export EDITOR='vim'
 
+# Bind alt-left and alt-right to words navigation
+bindkey "[D" vi-backward-blank-word
+bindkey "[C" vi-forward-blank-word
+
 # Enable asdf version manager
 source /usr/local/opt/asdf/asdf.sh
 source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
@@ -65,3 +69,4 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 # Enable Google Cloud SDK
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+
