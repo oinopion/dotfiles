@@ -6,17 +6,17 @@ ZSH_THEME=""
 
 # Select oh-my-zsh plugins
 plugins=(
-    git 
-    osx 
+    git
+    osx
     mix-fast
-    heroku 
+    heroku
     postgres
     docker
     aws
     z
     docker-compose
     httpie
-    kubectl
+    # kubectl
 )
 
 # Enable oh-my-zsh
@@ -65,4 +65,3 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 # Enable Google Cloud SDK
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-

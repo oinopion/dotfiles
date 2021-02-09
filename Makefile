@@ -1,4 +1,4 @@
-install: install-vim install-zsh install-ssh install-git install-ohmyzsh install-iterm-colorscheme
+install: install-vim install-zsh install-ssh install-git install-ohmyzsh install-iterm-colorscheme install-python-rc
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
