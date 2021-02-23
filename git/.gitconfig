@@ -29,7 +29,7 @@
     catchup = "!f(){ echo -n \"reset \\033[0;33m$(git symbolic-ref -q --short HEAD)\\033[0m to \\033[0;33m$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))\\033[0m? (Y/n) \"; read -r ans; if [ \"$ans\" = \"y\" -o \"$ans\" = \"Y\" -o -z \"$ans\" ]; then git reset --hard $(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)); else echo \"catchup aborted\"; fi }; f"
     
     # Prunes origin branches and removes local merged branches
-    cleanupbranches = "!f(){ git remote prune origin; git branch --merged | egrep -v '(^\\*|master|dev)' | xargs git branch -d; }; f"
+    cleanupbranches = "!f(){ git remote prune origin; git branch --merged | egrep -v '(^\\*|master|main|dev)' | xargs git branch -d; }; f"
 
 [color]
     ui = true
