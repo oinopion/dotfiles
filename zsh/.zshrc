@@ -7,7 +7,7 @@ ZSH_THEME=""
 # Select oh-my-zsh plugins
 plugins=(
     git
-    osx
+    macos
     mix-fast
     heroku
     postgres
@@ -65,8 +65,4 @@ path+="/usr/local/opt/openssl@1.1/bin"
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
-
-# Enable Google Cloud SDK
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
