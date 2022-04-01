@@ -9,7 +9,6 @@ plugins=(
     git
     macos
     mix-fast
-    heroku
     postgres
     docker
     aws
@@ -39,8 +38,7 @@ bindkey "[D" vi-backward-blank-word
 bindkey "[C" vi-forward-blank-word
 
 # Enable asdf version manager
-source /usr/local/opt/asdf/asdf.sh
-source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
 export NODEJS_CHECK_SIGNATURES="no"
 
 # Python startup
@@ -57,12 +55,9 @@ path+="$GOPATH/bin"
 # Custom aliases
 source $HOME/.alias
 
-
 # Brew path fixes
-
-path+="/usr/local/opt/openssl@1.1/bin"
-
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+OPENSSL_PREFIX="$(brew --prefix openssl)/bin:$PATH"
+export PATH="$OPENSSL_PREFIX/bin:$PATH"
+export LDFLAGS="$LDFLAGS -I$OPENSSL_PREFIX/include -L$OPENSSL_PREFIX/lib"
+export CPPFLAGS="$CPPFLAGS -I$OPENSSL_PREFIX/include -L$OPENSSL_PREFIX/lib"
 
