@@ -15,6 +15,7 @@ plugins=(
     z
     docker-compose
     httpie
+    gh
     # kubectl
 )
 
@@ -56,8 +57,8 @@ path+="$GOPATH/bin"
 source $HOME/.alias
 
 # Brew path fixes
-OPENSSL_PREFIX="$(brew --prefix openssl)/bin:$PATH"
-export PATH="$OPENSSL_PREFIX/bin:$PATH"
-export LDFLAGS="$LDFLAGS -I$OPENSSL_PREFIX/include -L$OPENSSL_PREFIX/lib"
-export CPPFLAGS="$CPPFLAGS -I$OPENSSL_PREFIX/include -L$OPENSSL_PREFIX/lib"
+#OPENSSL_PREFIX="$(brew --prefix openssl)/bin:$PATH"
+#export PATH="$OPENSSL_PREFIX/bin:$PATH"
+#export LDFLAGS="$LDFLAGS -I$OPENSSL_PREFIX/include -L$OPENSSL_PREFIX/lib"
+#export CPPFLAGS="$CPPFLAGS -I$OPENSSL_PREFIX/include -L$OPENSSL_PREFIX/lib"
 

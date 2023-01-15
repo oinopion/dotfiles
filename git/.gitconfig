@@ -24,23 +24,16 @@
     # Lists branches in last commit date
     recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - (%(color:green)%(committerdate:relative)%(color:reset))'
     
-    # Resets current branch to catch up with remote, local commits will be 
-    # discarded. Useful when reviewing code of someone who rebases often.
-    catchup = "!f(){ echo -n \"reset \\033[0;33m$(git symbolic-ref -q --short HEAD)\\033[0m to \\033[0;33m$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))\\033[0m? (Y/n) \"; read -r ans; if [ \"$ans\" = \"y\" -o \"$ans\" = \"Y\" -o -z \"$ans\" ]; then git reset --hard $(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)); else echo \"catchup aborted\"; fi }; f"
-    
-    # Prunes origin branches and removes local merged branches
-    cleanupbranches = "!f(){ git remote prune origin; git branch --merged | egrep -v '(^\\*|master|main|dev)' | xargs git branch -d; }; f"
-
 [color]
     ui = true
 [core]
     excludesfile = ~/.gitignore
-    editor = vim
 [branch]
     autosetupmerge = true
 [push]
     default = current
+    autosetupremote = true
 [pull]
     ff = only
 [init]
-	defaultBranch = main
+    defaultbranch = main
