@@ -1,0 +1,8 @@
+# Universal alias file - should work with bash, zsh and fish
+alias fd="fdfind"
+alias bat="batcat"
+alias cat="batcat"
+alias ls="exa"
+alias j="just"
+alias d="docker"
+alias dc="docker compose"
