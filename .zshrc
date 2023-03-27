@@ -22,6 +22,7 @@ bindkey "[D" vi-backward-blank-word
 bindkey "[C" vi-forward-blank-word
 
 # Local executable directory
+typeset -U path PATH
 path+="$HOME/.local/bin"
 
 # Use VS Code as editor when in dev container, vim otherwise
