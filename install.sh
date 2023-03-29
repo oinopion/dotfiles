@@ -4,6 +4,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 DEBIAN_PACKAGES=("fish" "exa" "zoxide" "fzf" "fd-find" "bat" "curl" "httpie" "ripgrep" "vim")
+BREW_PACKAGES=("fish" "exa" "zoxide" "fzf" "fd" "bat" "curl" "httpie" "ripgrep" "vim" "starship")
 CONFIG_DIR="$HOME/.config"
 SSH_DIR="$HOME/.ssh"
 LOCAL_BIN_DIR="$HOME/.local/bin"
@@ -12,6 +13,10 @@ LOCAL_FISH_COMPLETIONS_DIR="$HOME/.local/share/fish/vendor_completions.d"
 # Runtime constants
 OS=$(uname -s)
 BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+
+function create_dirs {
+  mkdir -p "$LOCAL_BIN_DIR" "$LOCAL_FISH_COMPLETIONS_DIR"
+}
 
 function link_ssh_files {
   mkdir -p "$SSH_DIR"
@@ -44,6 +49,10 @@ function install_linux_packages {
     sudo apt-get update
     DEBIAN_FRONTEND=noninteractive \
       sudo apt-get install -y --no-install-recommends "${DEBIAN_PACKAGES[@]}"
+
+    # Debian has renames binaries for fd and bat
+    ln -fs /usr/bin/fdfind "$LOCAL_BIN_DIR/fd"
+    ln -fs /usr/bin/batcat "$LOCAL_BIN_DIR/bat"
   fi
 
   if ! (command -v starship > /dev/null); then
@@ -55,16 +64,23 @@ function install_linux_packages {
   fi
 }
 
+function install_brew_packages() {
+  if ! (brew list "${BREW_PACKAGES[@]}" &> /dev/null); then
+    brew install "${BREW_PACKAGES[@]}"
+  fi
+}
+
 function main {
   set -euo pipefail
 
+  create_dirs
   link_ssh_files
   link_dot_config_files
   link_top_level_files
   if [[ $OS = "Linux" ]]; then
     install_linux_packages
   elif [[ $OS = "Darwin" ]]; then
-    echo "Probably brew?"
+    install_brew_packages
   fi
 }
 
