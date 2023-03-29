@@ -12,6 +12,8 @@ else
   set -gx EDITOR vim
 end
 
+set -gx BAT_THEME Dracula
+
 if test -f "$HOME/.alias"
   source "$HOME/.alias"
 end
