@@ -1,5 +1,5 @@
 # Universal alias file - should work with bash, zsh and fish
-alias cat="batcat"
+alias cat="bat"
 alias ls="exa"
 alias ll="exa -lh"
 alias la="exa -lha"
