@@ -17,17 +17,15 @@
     last = cat-file commit HEAD
     uncommit = reset --soft HEAD^
     unstash = stash pop
-    
+
     # A nice and compact log
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    
+
     # Lists branches in last commit date
     recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - (%(color:green)%(committerdate:relative)%(color:reset))'
-    
+
 [color]
     ui = true
-[core]
-    excludesfile = ~/.gitignore
 [branch]
     autosetupmerge = true
 [push]

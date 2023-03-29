@@ -1,0 +1,12 @@
+# Docs: https://starship.rs/config/
+
+# Status module displays exit code for failed commands
+[status]
+disabled = false
+
+# Container module displays a container name if inside the container
+[container]
+disabled = true
+
+[gcloud]
+symbol = " "

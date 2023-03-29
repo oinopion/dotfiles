@@ -1,11 +1,10 @@
+__pycache__/
 *.pyc
 *.iml
 *.iws
 *.ipr
+*.swp
 .idea
-.vscode
 .elixir_ls
 .mix_tasks
-*.swp
-.env
 .DS_Store
