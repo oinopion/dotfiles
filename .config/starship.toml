@@ -1,5 +1,8 @@
 # Docs: https://starship.rs/config/
 
+# Git takes a long time in dev container
+command_timeout = 20000
+
 # Status module displays exit code for failed commands
 [status]
 disabled = false
