@@ -3,8 +3,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-DEBIAN_PACKAGES=("fish" "exa" "zoxide" "fzf" "fd-find" "bat" "curl" "httpie" "ripgrep" "vim")
-BREW_PACKAGES=("fish" "exa" "zoxide" "fzf" "fd" "bat" "curl" "httpie" "ripgrep" "vim" "starship")
+DEBIAN_PACKAGES=("fish" "exa" "zoxide" "fzf" "fd-find" "bat" "curl" "httpie" "ripgrep" "vim" "direnv")
+BREW_PACKAGES=("fish" "exa" "zoxide" "fzf" "fd" "bat" "curl" "httpie" "ripgrep" "vim" "direnv" "starship")
 CONFIG_DIR="$HOME/.config"
 SSH_DIR="$HOME/.ssh"
 LOCAL_BIN_DIR="$HOME/.local/bin"
