@@ -9,13 +9,19 @@ CONFIG_DIR="$HOME/.config"
 SSH_DIR="$HOME/.ssh"
 LOCAL_BIN_DIR="$HOME/.local/bin"
 LOCAL_FISH_COMPLETIONS_DIR="$HOME/.local/share/fish/vendor_completions.d"
+LOCAL_FISH_VENDOR_CONF_DIR="$HOME/.local/share/fish/vendor_conf.d"
+LOCAL_FISH_VENDOR_FUNCTIONS_DIR="$HOME/.local/share/fish/vendor_functions.d"
 
 # Runtime constants
 OS=$(uname -s)
 BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 
 function create_dirs {
-  mkdir -p "$LOCAL_BIN_DIR" "$LOCAL_FISH_COMPLETIONS_DIR"
+  mkdir -p \
+    "$LOCAL_BIN_DIR" \
+    "$LOCAL_FISH_COMPLETIONS_DIR" \
+    "$LOCAL_FISH_VENDOR_CONF_DIR" \
+    "$LOCAL_FISH_VENDOR_FUNCTIONS_DIR"
 }
 
 function link_ssh_files {
@@ -68,6 +74,10 @@ function install_brew_packages() {
   if ! (brew list "${BREW_PACKAGES[@]}" &> /dev/null); then
     brew install "${BREW_PACKAGES[@]}"
   fi
+
+  # brew doesn't complete fzf setup, do it here
+  brew_prefix=$(brew --prefix)
+  ln -fs "$brew_prefix/opt/fzf/shell/key-bindings.fish" "$LOCAL_FISH_VENDOR_FUNCTIONS_DIR/fzf_key_bindings.fish"
 }
 
 function main {

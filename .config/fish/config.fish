@@ -11,7 +11,7 @@ end
 if status --is-interactive
   set -gx BAT_THEME Dracula
 
-  if test -n $REMOTE_CONTAINERS
+  if test "$TERM_PROGRAM" = "vscode"
     set -gx EDITOR code -w
   else
     set -gx EDITOR vim
@@ -29,4 +29,11 @@ if status --is-interactive
 
   # Direnv
   direnv hook fish | source
+
+  # Install fzf key bindings:
+  #   ctrl-r for searching history
+  #   ctrl-t for file completion
+  #   ctrl-e for quick cd
+  fzf_key_bindings
+  bind \ce fzf-cd-widget
 end
