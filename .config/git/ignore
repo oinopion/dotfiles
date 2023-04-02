@@ -1,10 +1,21 @@
+# Ignore scratch files
+scratchpad/
+scratch-*
+
+# Python
 __pycache__/
 *.pyc
+
+# Elixir
+.elixir_ls/
+.mix_tasks/
+
+# IntelliJ/Pycharm
 *.iml
 *.iws
 *.ipr
 *.swp
-.idea
-.elixir_ls
-.mix_tasks
+.idea/
+
+# macOS detritus
 .DS_Store
