@@ -2,6 +2,7 @@
 
 # Git takes a long time in dev container
 command_timeout = 20000
+right_format = """$time"""
 
 # Status module displays exit code for failed commands
 [status]
@@ -13,3 +14,6 @@ disabled = true
 
 [gcloud]
 symbol = " "
+
+[time]
+disabled = false
