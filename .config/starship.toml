@@ -12,6 +12,9 @@ disabled = false
 [container]
 disabled = true
 
+[git_status]
+stashed = ''  # Don't show if there are stashed changes (there usually are)
+
 [gcloud]
 symbol = " "
 
