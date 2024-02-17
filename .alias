@@ -1,10 +1,17 @@
 # Universal alias file - should work with bash, zsh and fish
 alias cat="bat"
+
 alias ls="exa"
+alias l="exa -1"
 alias ll="exa -lh"
 alias la="exa -lha"
+alias t="exa -TL2"
+
 alias j="just"
 alias d="docker"
 alias dc="docker compose"
 alias tf="terraform"
 alias k="clear"
+
+alias dotfiles-edit="code ~/.dotfiles"
+alias dotfiles-update="bash -x -c 'cd ~/.dotfiles && git pull && ./install.sh'"
