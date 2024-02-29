@@ -9,7 +9,7 @@ if ! contains "$HOME/.local/bin" $PATH
 end
 
 if status --is-interactive
-  set -gx BAT_THEME Dracula
+  set -gx BAT_THEME OneHalfDark
 
   if test "$TERM_PROGRAM" = "vscode"
     set -gx EDITOR code -w

@@ -4,7 +4,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 DEBIAN_PACKAGES=("fish" "exa" "zoxide" "fzf" "fd-find" "bat" "curl" "httpie" "ripgrep" "vim" "direnv")
-BREW_PACKAGES=("fish" "exa" "zoxide" "fzf" "fd" "bat" "curl" "httpie" "ripgrep" "vim" "direnv" "starship")
+BREW_PACKAGES=("fish" "eza" "zoxide" "fzf" "fd" "bat" "curl" "httpie" "ripgrep" "vim" "direnv" "starship")
 CONFIG_DIR="$HOME/.config"
 SSH_DIR="$HOME/.ssh"
 LOCAL_BIN_DIR="$HOME/.local/bin"
@@ -62,7 +62,6 @@ function install_linux_packages {
   fi
 
   if ! (command -v starship > /dev/null); then
-    mkdir -p "$LOCAL_BIN_DIR" "$LOCAL_FISH_COMPLETIONS_DIR"
     echo "Installing starship..."
     curl -sSf https://starship.rs/install.sh | sh -s -- --yes --bin-dir "$LOCAL_BIN_DIR" > /dev/null
     echo "Starship successfully installed to $LOCAL_BIN_DIR"
@@ -78,6 +77,9 @@ function install_brew_packages() {
   # brew doesn't complete fzf setup, do it here
   brew_prefix=$(brew --prefix)
   ln -fs "$brew_prefix/opt/fzf/shell/key-bindings.fish" "$LOCAL_FISH_VENDOR_FUNCTIONS_DIR/fzf_key_bindings.fish"
+
+  # exa has been replaced by eza, but it's not available in old debian's yet; link eza to exa to preserve aliases
+  ln -fs "$brew_prefix/bin/eza" "$LOCAL_BIN_DIR/exa"
 }
 
 function main {
