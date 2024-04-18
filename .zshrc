@@ -21,6 +21,10 @@ setopt autocd
 bindkey "[D" vi-backward-blank-word
 bindkey "[C" vi-forward-blank-word
 
+if [ -f "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Local executable directory
 typeset -U path PATH
 path+="$HOME/.local/bin"
