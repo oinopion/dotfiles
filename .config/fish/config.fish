@@ -8,6 +8,11 @@ if ! contains "$HOME/.local/bin" $PATH
   set -gx PATH "$HOME/.local/bin" $PATH
 end
 
+# Explicity set SSH agent forwarding for 1Password
+if test -f "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  set -gx SSH_AUTH_SOCK "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+end
+
 if status --is-interactive
   set -gx BAT_THEME OneHalfDark
 
