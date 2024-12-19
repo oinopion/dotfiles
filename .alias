@@ -17,5 +17,8 @@ alias k="clear"
 alias pr="poetry run"
 alias prt="poetry run task"
 
+alias ur="uv run"
+alias urt="uv run task"
+
 alias dotfiles-edit="code ~/.dotfiles"
 alias dotfiles-update="bash -x -c 'cd ~/.dotfiles && git pull && ./install.sh'"
