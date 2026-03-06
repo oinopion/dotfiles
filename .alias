@@ -1,11 +1,11 @@
 # Universal alias file - should work with bash, zsh and fish
 alias cat="bat"
 
-alias ls="exa"
-alias l="exa -1"
-alias ll="exa -lh"
-alias la="exa -lha"
-alias t="exa -TL2"
+alias ls="eza"
+alias l="eza -1"
+alias ll="eza -lh"
+alias la="eza -lha"
+alias t="eza -TL2"
 
 alias j="just"
 alias d="docker"
@@ -13,9 +13,6 @@ alias dc="docker compose"
 alias tf="terraform"
 alias tg="terragrunt"
 alias k="clear"
-
-alias pr="poetry run"
-alias prt="poetry run task"
 
 alias ur="uv run"
 alias urt="uv run task"
