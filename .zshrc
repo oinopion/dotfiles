@@ -25,11 +25,18 @@ setopt hist_ignore_space
 # Characters considered part of a word (default minus / so word navigation stops at path separators)
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
-# Up/Down: search history by prefix
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+# Up/Down: search history by prefix (cursor at end of line)
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
 
-# Alt + arrows: GUI-style word navigation (stops at punctuation)
+# Alt + Up/Down: search history by prefix (cursor stays at prefix)
+bindkey "^[[1;3A" history-beginning-search-backward
+bindkey "^[[1;3B" history-beginning-search-forward
+
+# Alt + Left/Right: GUI-style word navigation (stops at punctuation)
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word
 
