@@ -14,8 +14,5 @@ alias tf="terraform"
 alias tg="terragrunt"
 alias k="clear"
 
-alias ur="uv run"
-alias urt="uv run task"
-
 alias dotfiles-edit="code ~/.dotfiles"
 alias dotfiles-update="bash -x -c 'cd ~/.dotfiles && git pull && ./install.sh'"
