@@ -2,7 +2,7 @@
 
 # Git takes a long time in dev container
 command_timeout = 20000
-right_format = """$time"""
+# right_format = """$time"""
 
 # Status module displays exit code for failed commands
 [status]
@@ -13,10 +13,19 @@ disabled = false
 disabled = true
 
 [git_status]
-stashed = ''  # Don't show if there are stashed changes (there usually are)
+stashed = '' # Don't show if there are stashed changes (there usually are)
 
 [gcloud]
-symbol = " "
+disabled = true
 
 [time]
 disabled = false
+
+[package]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
