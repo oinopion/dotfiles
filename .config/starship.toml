@@ -29,3 +29,6 @@ disabled = true
 
 [python]
 disabled = true
+
+[hostname]
+ssh_symbol = '@'
