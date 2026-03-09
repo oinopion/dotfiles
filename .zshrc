@@ -1,7 +1,9 @@
 #
 # ZSH config
 #
-
+# Dependencies:
+# - macOS with Homebrew
+#   `brew install bat eza fzf zoxide starship zsh-completions zsh-autosuggestions zsh-syntax-highlighting`
 
 #
 # Shell history
@@ -77,10 +79,13 @@ setopt autocd
 #
 # Zsh plugins
 #
+
+# Shows as-you-type suggestions based on history and completions
 if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
   source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
+# Highlights command syntax as you type
 if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
   source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
@@ -114,14 +119,18 @@ fi
 #
 # Tool integrations
 #
+
+# Makes `z` command for quickly jumping to frequently used directories
 if command -v zoxide > /dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
+# Better shell history search with Ctrl + R
 if command -v fzf > /dev/null 2>&1; then
   eval "$(fzf --zsh)"
 fi
 
+# Fast, modern prompt with bunch of integrations and customizations
 if command -v starship > /dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
