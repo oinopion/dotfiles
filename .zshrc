@@ -24,8 +24,8 @@ setopt hist_ignore_space
 # Keybindings
 #
 
-# Characters considered part of a word (default minus / so word navigation stops at path separators)
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+# Characters considered part of a word
+WORDCHARS='*?[]~=&;!#$%^(){}<>'
 
 # Up/Down: search history by prefix (cursor at end of line)
 autoload -U history-search-end
