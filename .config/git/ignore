@@ -19,3 +19,5 @@ __pycache__/
 
 # macOS detritus
 .DS_Store
+
+**/.claude/settings.local.json

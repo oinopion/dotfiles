@@ -1,9 +1,6 @@
 #
 # ZSH config
 #
-# Dependencies:
-# - macOS with Homebrew
-#   `brew install bat eza fzf zoxide starship zsh-completions zsh-autosuggestions zsh-syntax-highlighting`
 
 #
 # Shell history
@@ -27,12 +24,6 @@ setopt hist_ignore_space
 # Characters considered part of a word
 WORDCHARS='*?[]~=&;!#$%^(){}<>'
 
-# Up/Down: search history by prefix (cursor at end of line)
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
 
 # Alt + Up/Down: search history by prefix (cursor stays at prefix)
 bindkey "^[[1;3A" history-beginning-search-backward
@@ -75,6 +66,12 @@ setopt complete_in_word
 setopt auto_menu
 setopt autocd
 
+if command -v batcat > /dev/null 2>&1; then
+  # Debian has renamed the `bat` binary to `batcat` to avoid conflicts, we create a symlink for bat
+  # and here we tell zsh to use `batcat` when `bat` is called for completions
+  compdef bat=batcat
+fi
+
 
 #
 # Zsh plugins
@@ -88,6 +85,16 @@ fi
 # Highlights command syntax as you type
 if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
   source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+# Fish-style substring history search with deduplication
+if [ -f "$HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh" ]; then
+  source "$HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+  export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+
+  # Up/Down: fish-style substring history search (bound after plugin is loaded below)
+  bindkey "^[[A" history-substring-search-up
+  bindkey "^[[B" history-substring-search-down
 fi
 
 
@@ -114,6 +121,8 @@ fi
 if [ -f "$HOME/.alias" ]; then
   source "$HOME/.alias"
 fi
+
+
 
 
 #
